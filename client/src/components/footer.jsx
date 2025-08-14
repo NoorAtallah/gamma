@@ -220,7 +220,7 @@ const GammaFooter = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-6">
               <p className="text-gray-400 font-mono text-sm">
-                © 2024 GAMMA DEFENCE SYSTEMS. All rights reserved.
+                © 2025 GAMMA DEFENCE SYSTEMS. All rights reserved.
               </p>
               <div className="flex items-center gap-2">
                 <Shield size={16} className="text-teal-500" />
