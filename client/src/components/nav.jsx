@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Shield, Menu, X } from 'lucide-react';
 import img from '../assets/1.png'
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,6 +21,11 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Check if current path matches the link
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
   return (
     <nav 
       className="w-full" 
@@ -28,55 +36,63 @@ const Navbar = () => {
           
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <div className="flex items-center gap-3">
-              {/* Logo Image Placeholder */}
+            <Link to="/" className="flex items-center gap-3">
+              {/* Logo Image */}
               <div className="w-10 h-10 bg-teal-500/20 rounded-full border-2 border-teal-500 flex items-center justify-center">
-     
                 <img src={img} alt="Gamma Defence Systems" className="w-8 h-8 object-contain" />
               </div>
               <div>
                 <h1 className="text-white text-xl font-bold">GAMMA DEFENCE SYSTEMS</h1>
               </div>
-            </div>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a 
-                href="#home" 
-                className="text-white hover:bg-black hover:bg-opacity-20 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              <Link 
+                to="/" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  isActive('/') 
+                    ? 'text-teal-500 bg-black bg-opacity-20' 
+                    : 'text-white hover:bg-black hover:bg-opacity-20'
+                }`}
               >
                 Home
-              </a>
-              <a 
-                href="#about" 
-                className="text-white hover:bg-black hover:bg-opacity-20 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              </Link>
+              <Link 
+                to="/about" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  isActive('/about') 
+                    ? 'text-teal-500 bg-black bg-opacity-20' 
+                    : 'text-white hover:bg-black hover:bg-opacity-20'
+                }`}
               >
                 About Us
-              </a>
-              <a 
-                href="#products" 
-                className="text-white hover:bg-black hover:bg-opacity-20 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              </Link>
+              <Link 
+                to="/products" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  isActive('/products') 
+                    ? 'text-teal-500 bg-black bg-opacity-20' 
+                    : 'text-white hover:bg-black hover:bg-opacity-20'
+                }`}
               >
                 Products
-              </a>
-              <a 
-                href="#services" 
-                className="text-white hover:bg-black hover:bg-opacity-20 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-              >
-                Services
-              </a>
-              <a 
-                href="#contact" 
-                className="text-white hover:bg-black hover:bg-opacity-20 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              </Link>
+          
+              <Link 
+                to="/contact" 
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  isActive('/contact') 
+                    ? 'text-teal-500 bg-black bg-opacity-20' 
+                    : 'text-white hover:bg-black hover:bg-opacity-20'
+                }`}
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
           </div>
-
-          {/* Remove Mission Status Indicator for clean look */}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -98,41 +114,51 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3" style={{ backgroundColor: '#000000' }}>
-            <a
-              href="#home"
-              className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+            <Link
+              to="/"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/') 
+                  ? 'text-teal-500 bg-gray-700' 
+                  : 'text-white hover:bg-gray-700'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Home
-            </a>
-            <a
-              href="#about"
-              className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+            </Link>
+            <Link
+              to="/about"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/about') 
+                  ? 'text-teal-500 bg-gray-700' 
+                  : 'text-white hover:bg-gray-700'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               About Us
-            </a>
-            <a
-              href="#products"
-              className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+            </Link>
+            <Link
+              to="/products"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/products') 
+                  ? 'text-teal-500 bg-gray-700' 
+                  : 'text-white hover:bg-gray-700'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Products
-            </a>
-            <a
-              href="#services"
-              className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </a>
-            <a
-              href="#contact"
-              className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+            </Link>
+       
+            <Link
+              to="/contact"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/contact') 
+                  ? 'text-teal-500 bg-gray-700' 
+                  : 'text-white hover:bg-gray-700'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       )}

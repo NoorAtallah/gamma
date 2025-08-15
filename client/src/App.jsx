@@ -1,24 +1,24 @@
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from "./components/nav"
-import DroneHero from "./components/hero"
-import GammaProductsSection from "./components/products"
-import GammaAboutSection from "./components/aboutUs"
-import GammaContactSection from "./components/contactUs"
-import GammaServicesSection from "./components/services"
+import HomePage from "./pages/homePage"
+import AboutUsPage from './pages/aboutUsPage'
+import ContactUsPage from './pages/contatUsPage'
+import ProductsPage from './pages/productsPage'
 import GammaFooter from "./components/footer"
-function App() {
- 
 
+function App() {
   return (
-    <>
+    <Router>
       <Navbar />
-      <DroneHero />
-      <GammaProductsSection />
-      <GammaAboutSection />
-      <GammaServicesSection />
-      <GammaContactSection />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/contact" element={<ContactUsPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+ 
+      </Routes>
       <GammaFooter />
-    </>
+    </Router>
   )
 }
 
