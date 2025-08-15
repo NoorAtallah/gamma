@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Eye, Target, Shield, ChevronRight, Activity, Lock, Zap, Satellite } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const GammaProductsSection = () => {
   const [activeProduct, setActiveProduct] = useState(0);
   const [pulseAnimation, setPulseAnimation] = useState(0);
@@ -284,26 +284,30 @@ const GammaProductsSection = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
-              <button 
-                className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 text-black font-bold transition-all duration-300 hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
-                style={{ 
-                  backgroundColor: '#14b8a6',
-                  clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 100%, 15px 100%)'
-                }}
-              >
-                REQUEST BRIEFING
-                <ChevronRight size={16} className="sm:hidden" />
-                <ChevronRight size={20} className="hidden sm:block" />
-              </button>
-              
-              <button className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-600 text-white font-bold hover:border-teal-400 hover:text-teal-400 transition-all duration-300 text-sm sm:text-base">
-                <Zap size={16} className="sm:hidden" />
-                <Zap size={20} className="hidden sm:block" />
-                <span className="hidden sm:inline">TECHNICAL SPECS</span>
-                <span className="sm:hidden">SPECS</span>
-              </button>
-            </div>
+         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
+  <Link 
+    to="/contact"
+    className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 text-black font-bold transition-all duration-300 hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
+    style={{ 
+      backgroundColor: '#14b8a6',
+      clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 100%, 15px 100%)'
+    }}
+  >
+    REQUEST BRIEFING
+    <ChevronRight size={16} className="sm:hidden" />
+    <ChevronRight size={20} className="hidden sm:block" />
+  </Link>
+  
+  <Link 
+    to="/products"
+    className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-600 text-white font-bold hover:border-teal-400 hover:text-teal-400 transition-all duration-300 text-sm sm:text-base"
+  >
+    <Zap size={16} className="sm:hidden" />
+    <Zap size={20} className="hidden sm:block" />
+    <span className="hidden sm:inline">TECHNICAL SPECS</span>
+    <span className="sm:hidden">SPECS</span>
+  </Link>
+</div>
           </div>
         </div>
       </div>

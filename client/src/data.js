@@ -1,4 +1,14 @@
-// productsData.js
+import img from './assets/12.png'
+import img2 from './assets/11.png'
+import img3 from './assets/10.png'
+import img4 from './assets/9.png'
+import img5 from './assets/8.png'
+import img6 from './assets/7.png'
+import img7 from './assets/6.png'
+import img8 from './assets/5.png'
+import img9 from './assets/4.png'
+import img10 from './assets/3.png'
+import img11 from './assets/2.png'
 export const productsData = {
   categories: [
     {
@@ -41,7 +51,7 @@ export const productsData = {
       name: 'Gamma SkyEye-X1',
       subtitle: 'Tactical UAV Platform',
       description: 'Long-range reconnaissance and communications UAV equipped with day/night vision and AI-powered video analytics.',
-      image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=800&h=600&fit=crop',
+      image: img,
       status: 'ACTIVE',
       classification: 'RESTRICTED',
       specifications: {
@@ -70,7 +80,7 @@ export const productsData = {
       name: 'Gamma Falcon-R',
       subtitle: 'Rapid Deployment Drone',
       description: 'Compact rapid-deployment drone ideal for intelligence operations in complex environments.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
+      image: img2,
       status: 'ACTIVE',
       classification: 'CONFIDENTIAL',
       specifications: {
@@ -99,7 +109,7 @@ export const productsData = {
       name: 'Gamma Orion-HS',
       subtitle: 'Heavy-Lift UAV',
       description: 'Heavy-lift UAV designed for aerial resupply and equipment transport in remote areas.',
-      image: 'https://images.unsplash.com/photo-1544498681-6da71013ce82?w=800&h=600&fit=crop',
+      image: img3,
       status: 'DEVELOPMENT',
       classification: 'RESTRICTED',
       specifications: {
@@ -130,7 +140,7 @@ export const productsData = {
       name: 'Gamma Sentinel-4X',
       subtitle: 'Autonomous Reconnaissance Vehicle',
       description: 'Fully autonomous ground vehicle for reconnaissance and equipment transport, featuring radar and thermal vision.',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
+      image: img4,
       status: 'ACTIVE',
       classification: 'CONFIDENTIAL',
       specifications: {
@@ -159,7 +169,7 @@ export const productsData = {
       name: 'Gamma Rover-TX',
       subtitle: 'Urban Operations Robot',
       description: 'Compact urban operations robot for building entry and close-quarters surveillance.',
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop',
+      image: img5,
       status: 'ACTIVE',
       classification: 'RESTRICTED',
       specifications: {
@@ -190,7 +200,7 @@ export const productsData = {
       name: 'Gamma AegisNet',
       subtitle: 'AI Command & Control System',
       description: 'Centralized command-and-control system that integrates data from multiple platforms and uses AI for rapid decision-making.',
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=600&fit=crop',
+      image: img6,
       status: 'ACTIVE',
       classification: 'TOP SECRET',
       specifications: {
@@ -219,7 +229,7 @@ export const productsData = {
       name: 'Gamma Vision-360',
       subtitle: 'Multi-Sensor Awareness System',
       description: 'Multi-sensor 360° situational awareness system for threat detection and target tracking.',
-      image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=600&fit=crop',
+      image: img7,
       status: 'ACTIVE',
       classification: 'CONFIDENTIAL',
       specifications: {
@@ -250,7 +260,7 @@ export const productsData = {
       name: 'Gamma Link-Secure',
       subtitle: 'Encrypted Field Network',
       description: 'Encrypted field communication network connecting teams, vehicles, and UAVs.',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
+      image: img8,
       status: 'ACTIVE',
       classification: 'RESTRICTED',
       specifications: {
@@ -279,7 +289,7 @@ export const productsData = {
       name: 'Gamma Relay-X',
       subtitle: 'Long-Range Transmission Unit',
       description: 'Long-range transmission units designed for harsh and contested environments.',
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+      image: img9,
       status: 'ACTIVE',
       classification: 'CONFIDENTIAL',
       specifications: {
@@ -310,7 +320,7 @@ export const productsData = {
       name: 'Gamma Stratos',
       subtitle: 'High-Altitude Long-Endurance UAV',
       description: 'High-Altitude Long-Endurance (HALE) UAV for persistent border surveillance and communication coverage.',
-      image: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=800&h=600&fit=crop',
+      image: img10,
       status: 'DEVELOPMENT',
       classification: 'TOP SECRET',
       specifications: {
@@ -339,7 +349,7 @@ export const productsData = {
       name: 'Gamma Hydra',
       subtitle: 'Autonomous Maritime Drone',
       description: 'Autonomous maritime drones for coastal monitoring, patrol, and search-and-rescue missions.',
-      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop',
+      image: img11,
       status: 'CONCEPT',
       classification: 'CONFIDENTIAL',
       specifications: {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Play, Zap, Crosshair, Radar, Signal, Target, ArrowRight, Power } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const FuturisticDroneHero = () => {
   const [scanProgress, setScanProgress] = useState(0);
   const [activeSystem, setActiveSystem] = useState(0);
@@ -223,22 +223,26 @@ const FuturisticDroneHero = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full max-w-sm sm:max-w-none px-4 sm:px-0">
-              <button 
-                className="group flex items-center justify-center gap-3 px-6 sm:px-8 py-3 border-2 border-teal-500 text-teal-500 font-mono font-bold hover:bg-teal-500 hover:text-black transition-all duration-300 text-sm sm:text-base"
-                style={{ clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 100%, 20px 100%)' }}
-              >
-                DEPLOY DRONE
-                <ArrowRight size={16} className="sm:hidden group-hover:translate-x-1 transition-transform" />
-                <ArrowRight size={20} className="hidden sm:block group-hover:translate-x-1 transition-transform" />
-              </button>
-              
-              <button className="group flex items-center justify-center gap-3 px-6 sm:px-8 py-3 border border-white/30 text-white font-mono hover:border-teal-500 hover:text-teal-500 transition-all duration-300 text-sm sm:text-base">
-                <Play size={16} className="sm:hidden" />
-                <Play size={20} className="hidden sm:block" />
-                VIEW DEMO
-              </button>
-            </div>
+           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full max-w-sm sm:max-w-none px-4 sm:px-0">
+  <Link 
+    to="/products"
+    className="group flex items-center justify-center gap-3 px-6 sm:px-8 py-3 border-2 border-teal-500 text-teal-500 font-mono font-bold hover:bg-teal-500 hover:text-black transition-all duration-300 text-sm sm:text-base"
+    style={{ clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 100%, 20px 100%)' }}
+  >
+    DEPLOY DRONE
+    <ArrowRight size={16} className="sm:hidden group-hover:translate-x-1 transition-transform" />
+    <ArrowRight size={20} className="hidden sm:block group-hover:translate-x-1 transition-transform" />
+  </Link>
+  
+  <Link 
+    to="/about"
+    className="group flex items-center justify-center gap-3 px-6 sm:px-8 py-3 border border-white/30 text-white font-mono hover:border-teal-500 hover:text-teal-500 transition-all duration-300 text-sm sm:text-base"
+  >
+    <Play size={16} className="sm:hidden" />
+    <Play size={20} className="hidden sm:block" />
+    VIEW DEMO
+  </Link>
+</div>
           </div>
 
           {/* Right Panel - Technical Specs */}
