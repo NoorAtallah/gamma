@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav 
-      className="w-full  top-0 z-50" 
+      className="w-full sticky top-0 z-50" 
       style={{ backgroundColor: '#1b4242' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
