@@ -38,7 +38,7 @@ const GammaProductsSection = () => {
     },
     {
       id: "GDS-002", 
-      name: "Stratos 🚀",
+      name: "Stratos ",
       type: "STRATOSPHERIC HALE UAV (FLAGSHIP)",
       description: "Revolutionary stratospheric UAV providing satellite-like persistent operations with 90-day endurance and 1000km communication coverage",
       image: img10,
@@ -213,11 +213,7 @@ const GammaProductsSection = () => {
               />
               
               {/* Special Flagship Badge for Stratos */}
-              {currentProduct.name.includes('🚀') && (
-                <div className="absolute -top-4 -right-4 px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-bold text-xs rounded-full border-2 border-yellow-400 shadow-lg">
-                  FLAGSHIP
-                </div>
-              )}
+            
             </div>
           </div>
 
