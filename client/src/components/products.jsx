@@ -18,42 +18,42 @@ const GammaProductsSection = () => {
       id: "GDS-001",
       name: "SkyEye-X1",
       type: "TACTICAL RECONNAISSANCE",
-      description: "Long-range surveillance platform with AI-powered analytics for tactical operations",
+      description: "Long-range tactical UAV equipped with HD day/night vision, laser designator and AI-powered video analytics for strategic reconnaissance",
       image: img,
       imageIcon: Eye,
       specs: {
-        range: "50 KM",
-        endurance: "8 HOURS", 
-        payload: "5 KG",
-        altitude: "6000 M"
+        range: "250 KM",
+        endurance: "18 HOURS", 
+        payload: "60 KG",
+        altitude: "8000 M"
       },
       capabilities: [
-        "Advanced AI-powered video analytics",
-        "Real-time target identification", 
-        "Encrypted communication systems",
-        "Weather-resistant design"
+        "Real-time video analytics with target detection",
+        "Dual communication systems (LOS & SATCOM)", 
+        "Laser designation capability",
+        "Extended 18-hour endurance"
       ],
       status: "OPERATIONAL",
       color: "#14b8a6"
     },
     {
       id: "GDS-002", 
-      name: "Stratos",
-      type: "HIGH-ALTITUDE LONG-ENDURANCE",
-      description: "Stratospheric UAV for persistent border surveillance and global communication coverage",
+      name: "Stratos 🚀",
+      type: "STRATOSPHERIC HALE UAV (FLAGSHIP)",
+      description: "Revolutionary stratospheric UAV providing satellite-like persistent operations with 90-day endurance and 1000km communication coverage",
       image: img10,
       imageIcon: Target,
       specs: {
-        altitude: "20,000 M",
-        endurance: "30+ DAYS",
-        range: "GLOBAL", 
+        altitude: "25,000 M",
+        endurance: "90 DAYS",
+        coverage: "1000 KM", 
         payload: "500 KG"
       },
       capabilities: [
-        "Stratospheric operation altitude",
-        "Month-long endurance flights",
-        "Global surveillance capability",
-        "Solar-powered sustainability"
+        "Stratospheric operation at 25km altitude",
+        "Unprecedented 90-day continuous endurance",
+        "Satellite-like coverage at fraction of cost",
+        "1000km secure communication radius"
       ],
       status: "DEVELOPMENT",
       color: "#06d6a0"
@@ -62,20 +62,20 @@ const GammaProductsSection = () => {
       id: "GDS-003",
       name: "Sentinel-4X", 
       type: "AUTONOMOUS RECONNAISSANCE",
-      description: "Fully autonomous ground vehicle for reconnaissance and equipment transport with advanced sensors",
+      description: "Fully autonomous ground vehicle for long-range reconnaissance with 1-ton payload capacity and multi-sensor suite",
       image: img4,
       imageIcon: Shield,
       specs: {
-        speed: "45 KM/H",
-        range: "120 KM",
-        payload: "150 KG",
-        battery: "12 HOURS" 
+        speed: "80 KM/H",
+        range: "600 KM",
+        payload: "1000 KG",
+        battery: "24 HOURS" 
       },
       capabilities: [
-        "360-degree situational awareness",
-        "Silent electric operation",
-        "Advanced obstacle avoidance",
-        "Modular sensor platform"
+        "Extended 600km operational range",
+        "Heavy 1-ton payload capacity",
+        "Multi-mode operation (RC/Autonomous)",
+        "Comprehensive sensor suite"
       ],
       status: "ACTIVE",
       color: "#4ade80"
@@ -84,20 +84,20 @@ const GammaProductsSection = () => {
       id: "GDS-004",
       name: "AegisNet", 
       type: "AI COMMAND & CONTROL",
-      description: "Centralized AI command system integrating multi-platform data for rapid decision-making",
+      description: "Advanced AI-powered command and control system integrating multi-domain data fusion with predictive modeling and automated decision support",
       image: img6,
       imageIcon: Eye,
       specs: {
         processing: "QUANTUM AI",
         response: "< 100MS",
         users: "500+",
-        security: "MILITARY-GRADE" 
+        fusion: "MULTI-DOMAIN" 
       },
       capabilities: [
-        "Real-time threat assessment",
-        "Multi-platform integration",
-        "Predictive analytics",
-        "Quantum-secured communications"
+        "Multi-domain data fusion capability",
+        "Real-time threat analysis and assessment",
+        "Predictive modeling for threat anticipation",
+        "Quantum-enhanced processing power"
       ],
       status: "ACTIVE",
       color: "#8b5cf6"
@@ -179,7 +179,7 @@ const GammaProductsSection = () => {
                 }}
               >
                 <span className="hidden sm:inline">{product.name}</span>
-                <span className="sm:hidden">{product.name.split('-')[0]}</span>
+                <span className="sm:hidden">{product.name.split('-')[0] || product.name.split(' ')[0]}</span>
               </button>
             ))}
           </div>
@@ -212,12 +212,22 @@ const GammaProductsSection = () => {
                 }}
               />
               
-    
+              {/* Special Flagship Badge for Stratos */}
+              {currentProduct.name.includes('🚀') && (
+                <div className="absolute -top-4 -right-4 px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-bold text-xs rounded-full border-2 border-yellow-400 shadow-lg">
+                  FLAGSHIP
+                </div>
+              )}
             </div>
           </div>
 
           {/* Right: Product Information */}
           <div className="space-y-6 sm:space-y-8 order-1 lg:order-2 px-4 sm:px-0">
+            
+            {/* Product Type Badge */}
+            <div className="inline-block px-4 py-2 border border-gray-600 text-gray-300 font-mono text-xs tracking-wider" style={{ backgroundColor: '#1b4242' }}>
+              {currentProduct.type}
+            </div>
             
             {/* Description */}
             <div>
@@ -249,6 +259,24 @@ const GammaProductsSection = () => {
                     <span className="text-gray-300 font-mono text-sm sm:text-base">{capability}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Status Badge */}
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2">
+                <Activity size={16} className="text-teal-400" />
+                <span className="text-gray-400 font-mono text-sm">STATUS:</span>
+                <span 
+                  className="px-3 py-1 font-bold text-xs rounded-full"
+                  style={{ 
+                    backgroundColor: currentProduct.status === 'OPERATIONAL' ? '#10b981' : 
+                                   currentProduct.status === 'ACTIVE' ? '#06d6a0' : '#f59e0b',
+                    color: '#000000'
+                  }}
+                >
+                  {currentProduct.status}
+                </span>
               </div>
             </div>
 
