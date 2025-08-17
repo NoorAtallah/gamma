@@ -12,7 +12,7 @@ const GammaContactSection = () => {
       icon: Mail,
       title: 'GENERAL INQUIRIES',
       shortTitle: 'GENERAL',
-      email: 'Info@GammaDefence.com',
+      email: 'Info@GammaDefenceSystems.com',
       description: 'General information and basic inquiries',
       security: 'STANDARD',
       color: '#14b8a6'
@@ -22,7 +22,7 @@ const GammaContactSection = () => {
       icon: Users,
       title: 'SALES & PARTNERSHIPS',
       shortTitle: 'SALES',
-      email: 'Sales@GammaDefence.com',
+      email: 'Sales@GammaDefenceSystems.com',
       description: 'Business partnerships and procurement requests',
       security: 'ELEVATED',
       color: '#06d6a0'
@@ -32,7 +32,7 @@ const GammaContactSection = () => {
       icon: MessageSquare,
       title: 'MEDIA & PRESS',
       shortTitle: 'MEDIA',
-      email: 'Media@GammaDefence.com',
+      email: 'Media@GammaDefenceSystems.com',
       description: 'Press releases and media communications',
       security: 'STANDARD',
       color: '#4ade80'
@@ -42,7 +42,7 @@ const GammaContactSection = () => {
       icon: Radio,
       title: 'TECHNICAL SUPPORT',
       shortTitle: 'SUPPORT',
-      email: 'Support@GammaDefence.com',
+      email: 'Support@GammaDefenceSystems.com',
       description: 'Technical assistance and system support',
       security: 'CLASSIFIED',
       color: '#10b981'

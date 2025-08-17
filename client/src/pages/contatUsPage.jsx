@@ -12,7 +12,7 @@ const ContactUsPage = () => {
       id: 'general',
       icon: Mail,
       title: 'GENERAL INQUIRIES',
-      email: 'Info@GammaDefence.com',
+      email: 'Info@GammaDefenceSystems.com',
       description: 'General information and basic inquiries',
       security: 'STANDARD',
       color: '#14b8a6',
@@ -22,7 +22,7 @@ const ContactUsPage = () => {
       id: 'sales',
       icon: Users,
       title: 'SALES & PARTNERSHIPS',
-      email: 'Sales@GammaDefence.com',
+      email: 'Sales@GammaDefenceSystems.com',
       description: 'Business partnerships and procurement requests',
       security: 'ELEVATED',
       color: '#06d6a0',
@@ -32,7 +32,7 @@ const ContactUsPage = () => {
       id: 'media',
       icon: MessageSquare,
       title: 'MEDIA & PRESS',
-      email: 'Media@GammaDefence.com',
+      email: 'Media@GammaDefenceSystems.com',
       description: 'Press releases and media communications',
       security: 'STANDARD',
       color: '#4ade80',
@@ -42,7 +42,7 @@ const ContactUsPage = () => {
       id: 'support',
       icon: Radio,
       title: 'TECHNICAL SUPPORT',
-      email: 'Support@GammaDefence.com',
+      email: 'Support@GammaDefenceSystems.com',
       description: 'Technical assistance and system support',
       security: 'CLASSIFIED',
       color: '#10b981',
@@ -286,7 +286,7 @@ const ContactUsPage = () => {
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                     <span className="text-white font-mono font-bold text-sm">GENERAL INQUIRIES</span>
                   </div>
-                  <p className="text-teal-500 font-mono text-lg">Info@GammaDefence.com</p>
+                  <p className="text-teal-500 font-mono text-lg">Info@GammaDefenceSystems.com</p>
                 </div>
                 
                 <div className="p-4 border border-gray-600/50 bg-black/30">
@@ -294,7 +294,7 @@ const ContactUsPage = () => {
                     <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
                     <span className="text-white font-mono font-bold text-sm">SALES & PARTNERSHIPS</span>
                   </div>
-                  <p className="text-teal-500 font-mono text-lg">Sales@GammaDefence.com</p>
+                  <p className="text-teal-500 font-mono text-lg">Sales@GammaDefenceSystems.com</p>
                 </div>
                 
                 <div className="p-4 border border-gray-600/50 bg-black/30">
@@ -302,7 +302,7 @@ const ContactUsPage = () => {
                     <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                     <span className="text-white font-mono font-bold text-sm">MEDIA & PRESS</span>
                   </div>
-                  <p className="text-teal-500 font-mono text-lg">Media@GammaDefence.com</p>
+                  <p className="text-teal-500 font-mono text-lg">Media@GammaDefenceSystems.com</p>
                 </div>
                 
                 <div className="p-4 border border-gray-600/50 bg-black/30">
@@ -310,7 +310,7 @@ const ContactUsPage = () => {
                     <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
                     <span className="text-white font-mono font-bold text-sm">TECHNICAL SUPPORT</span>
                   </div>
-                  <p className="text-teal-500 font-mono text-lg">Support@GammaDefence.com</p>
+                  <p className="text-teal-500 font-mono text-lg">Support@GammaDefenceSystems.com</p>
                 </div>
               </div>
             </div>
