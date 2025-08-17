@@ -5,10 +5,12 @@ import AboutUsPage from './pages/aboutUsPage'
 import ContactUsPage from './pages/contatUsPage'
 import ProductsPage from './pages/productsPage'
 import GammaFooter from "./components/footer"
+import ScrollToTop from './components/scrolltoTop'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
