@@ -23,10 +23,10 @@ const GammaFooter = () => {
   ];
 
   const contactChannels = [
-    { type: 'General', email: 'Info@GammaDefence.com', icon: Mail },
-    { type: 'Sales', email: 'Sales@GammaDefence.com', icon: Users },
-    { type: 'Media', email: 'Media@GammaDefence.com', icon: MessageSquare },
-    { type: 'Support', email: 'Support@GammaDefence.com', icon: Radio }
+    { type: 'General', email: 'Info@GammaDefenceSystems.com', icon: Mail },
+    { type: 'Sales', email: 'Sales@GammaDefenceSystems.com', icon: Users },
+    { type: 'Media', email: 'Media@GammaDefenceSystems.com', icon: MessageSquare },
+    { type: 'Support', email: 'Support@GammaDefenceSystems.com', icon: Radio }
   ];
 
   // Update system time and status
