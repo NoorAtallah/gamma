@@ -18,9 +18,9 @@ export const productsData = {
       icon: 'Radar'
     },
     {
-      id: 'agv', 
-      name: 'Autonomous Ground Vehicles (AGV)',
-      description: 'Intelligent ground-based platforms for reconnaissance and transport',
+      id: 'agmv', 
+      name: 'Autonomous Ground & Maritime Vehicles (AGMV)',
+      description: 'Intelligent ground-based and maritime platforms for reconnaissance, transport, and operations',
       icon: 'Truck'
     },
     {
@@ -34,12 +34,6 @@ export const productsData = {
       name: 'Tactical Communication Systems',
       description: 'Secure field communication networks and transmission systems',
       icon: 'Radio'
-    },
-    {
-      id: 'future',
-      name: 'Future Innovations',
-      description: 'Next-generation platforms currently in development',
-      icon: 'Rocket'
     }
   ],
 
@@ -72,7 +66,7 @@ export const productsData = {
         'Autonomous flight capabilities'
       ],
       price: 'Contact for Pricing',
-      availability: 'Available'
+      availability: 'Q1 2026'
     },
     {
       id: 'falcon-r',
@@ -101,7 +95,7 @@ export const productsData = {
         'Compact folding design'
       ],
       price: 'Contact for Pricing',
-      availability: 'Available'
+      availability: 'Q1 2026'
     },
     {
       id: 'orion-hs',
@@ -130,13 +124,42 @@ export const productsData = {
         'Modular payload bay'
       ],
       price: 'Contact for Pricing',
-      availability: 'Q3 2025'
+      availability: 'Q1 2026'
+    },
+    {
+      id: 'stratos',
+      categoryId: 'uas',
+      name: 'Gamma Stratos',
+      subtitle: 'High-Altitude Long-Endurance UAV',
+      description: 'High-Altitude Long-Endurance (HALE) UAV for persistent border surveillance and communication coverage.',
+      image: img10,
+      status: 'DEVELOPMENT',
+      classification: 'TOP SECRET',
+      specifications: {
+        'Altitude': '20,000 m',
+        'Endurance': '30+ days',
+        'Range': 'Global',
+        'Payload': '500 kg',
+        'Power': 'Solar + Fuel Cell',
+        'Communication': 'Satellite Link',
+        'Surveillance': 'Multi-Spectrum',
+        'Launch': '2026'
+      },
+      features: [
+        'Stratospheric operation altitude',
+        'Month-long endurance flights',
+        'Global surveillance capability',
+        'Solar-powered sustainability',
+        'Advanced sensor integration'
+      ],
+      price: 'Classified',
+      availability: 'Q1 2026'
     },
 
-    // Autonomous Ground Vehicles
+    // Autonomous Ground & Maritime Vehicles
     {
       id: 'sentinel-4x',
-      categoryId: 'agv',
+      categoryId: 'agmv',
       name: 'Gamma Sentinel-4X',
       subtitle: 'Autonomous Reconnaissance Vehicle',
       description: 'Fully autonomous ground vehicle for reconnaissance and equipment transport, featuring radar and thermal vision.',
@@ -161,11 +184,11 @@ export const productsData = {
         'Remote operation capability'
       ],
       price: 'Contact for Pricing',
-      availability: 'Available'
+      availability: 'Q1 2026'
     },
     {
       id: 'rover-tx',
-      categoryId: 'agv',
+      categoryId: 'agmv',
       name: 'Gamma Rover-TX',
       subtitle: 'Urban Operations Robot',
       description: 'Compact urban operations robot for building entry and close-quarters surveillance.',
@@ -190,7 +213,65 @@ export const productsData = {
         'Breach & clear support'
       ],
       price: 'Contact for Pricing',
-      availability: 'Available'
+      availability: 'Q1 2026'
+    },
+    {
+      id: 'hydra',
+      categoryId: 'agmv',
+      name: 'Gamma Hydra',
+      subtitle: 'Autonomous Maritime Drone',
+      description: 'Autonomous maritime drones for coastal monitoring, patrol, and search-and-rescue missions.',
+      image: img11,
+      status: 'CONCEPT',
+      classification: 'CONFIDENTIAL',
+      specifications: {
+        'Range': '500 km',
+        'Endurance': '72 hours',
+        'Speed': '45 knots',
+        'Payload': '200 kg',
+        'Sensors': 'Sonar, Radar, Optical',
+        'Environment': 'Sea State 6',
+        'Power': 'Hybrid Electric',
+        'Launch': '2027'
+      },
+      features: [
+        'Autonomous navigation system',
+        'Multi-mission capability',
+        'Severe weather operation',
+        'Underwater detection',
+        'Search and rescue equipped'
+      ],
+      price: 'TBD',
+      availability: 'Q1 2026'
+    },
+    {
+      id: 'leviathan-i',
+      categoryId: 'agmv',
+      name: 'Gamma Leviathan-I',
+      subtitle: 'Autonomous Intelligence Submarine',
+      description: 'Autonomous intelligence submarine designed for covert underwater reconnaissance, signal interception, and special operations support.',
+      image: img9, // You'll need to assign an appropriate image
+      status: 'DEVELOPMENT',
+      classification: 'TOP SECRET',
+      specifications: {
+        'Max Depth': '1000 m',
+        'Range': '2000 km',
+        'Endurance': '45 days',
+        'Speed': '25 knots submerged',
+        'Payload': '300 kg',
+        'Sensors': 'Sonar Array, SIGINT',
+        'Power': 'Fuel Cell + Battery',
+        'Hull': 'Stealth Composite'
+      },
+      features: [
+        'Ultra-quiet propulsion system',
+        'Advanced signal intelligence capability',
+        'Covert reconnaissance operations',
+        'Extended underwater endurance',
+        'Stealth hull design'
+      ],
+      price: 'Classified',
+      availability: 'Q1 2026'
     },
 
     // AI-Powered Defence Systems
@@ -221,7 +302,7 @@ export const productsData = {
         'Quantum-secured communications'
       ],
       price: 'Classified',
-      availability: 'Authorized Partners Only'
+      availability: 'Q1 2026'
     },
     {
       id: 'vision-360',
@@ -250,7 +331,7 @@ export const productsData = {
         'Integration with existing systems'
       ],
       price: 'Contact for Pricing',
-      availability: 'Available'
+      availability: 'Q1 2026'
     },
 
     // Tactical Communication Systems
@@ -281,7 +362,7 @@ export const productsData = {
         'Rapid deployment capability'
       ],
       price: 'Contact for Pricing',
-      availability: 'Available'
+      availability: 'Q1 2026'
     },
     {
       id: 'relay-x',
@@ -310,67 +391,7 @@ export const productsData = {
         'Extreme environment rated'
       ],
       price: 'Contact for Pricing',
-      availability: 'Available'
-    },
-
-    // Future Innovations
-    {
-      id: 'stratos',
-      categoryId: 'future',
-      name: 'Gamma Stratos',
-      subtitle: 'High-Altitude Long-Endurance UAV',
-      description: 'High-Altitude Long-Endurance (HALE) UAV for persistent border surveillance and communication coverage.',
-      image: img10,
-      status: 'DEVELOPMENT',
-      classification: 'TOP SECRET',
-      specifications: {
-        'Altitude': '20,000 m',
-        'Endurance': '30+ days',
-        'Range': 'Global',
-        'Payload': '500 kg',
-        'Power': 'Solar + Fuel Cell',
-        'Communication': 'Satellite Link',
-        'Surveillance': 'Multi-Spectrum',
-        'Launch': '2026'
-      },
-      features: [
-        'Stratospheric operation altitude',
-        'Month-long endurance flights',
-        'Global surveillance capability',
-        'Solar-powered sustainability',
-        'Advanced sensor integration'
-      ],
-      price: 'Classified',
-      availability: 'Development Phase'
-    },
-    {
-      id: 'hydra',
-      categoryId: 'future',
-      name: 'Gamma Hydra',
-      subtitle: 'Autonomous Maritime Drone',
-      description: 'Autonomous maritime drones for coastal monitoring, patrol, and search-and-rescue missions.',
-      image: img11,
-      status: 'CONCEPT',
-      classification: 'CONFIDENTIAL',
-      specifications: {
-        'Range': '500 km',
-        'Endurance': '72 hours',
-        'Speed': '45 knots',
-        'Payload': '200 kg',
-        'Sensors': 'Sonar, Radar, Optical',
-        'Environment': 'Sea State 6',
-        'Power': 'Hybrid Electric',
-        'Launch': '2027'
-      },
-      features: [
-        'Autonomous navigation system',
-        'Multi-mission capability',
-        'Severe weather operation',
-        'Underwater detection',
-        'Search and rescue equipped'
-      ],
-      price: 'TBD',
-      availability: 'Concept Phase'
+      availability: 'Q1 2026'
     }
   ]
 };

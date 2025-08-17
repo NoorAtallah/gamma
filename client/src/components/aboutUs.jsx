@@ -208,7 +208,7 @@ const GammaAboutSection = () => {
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400 font-mono text-xs sm:text-sm">FOUNDED</span>
-                  <span className="text-white font-bold text-sm sm:text-base">2023</span>
+                  <span className="text-white font-bold text-sm sm:text-base">2024</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400 font-mono text-xs sm:text-sm">HEADQUARTERS</span>

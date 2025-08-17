@@ -99,7 +99,7 @@ const GammaContactSection = () => {
         ))}
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-20 max-w-7xl">
         
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -117,10 +117,153 @@ const GammaContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
-          
-          {/* Left Panel - Headquarters & Status */}
-          <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
+        {/* Main Content - Full Width Layout */}
+        <div className="space-y-6 sm:space-y-8">
+            
+          {/* Contact Channels */}
+          <div className="p-6 sm:p-8 border border-gray-600 bg-black/30 backdrop-blur-sm">
+            <div className="flex items-center gap-3 mb-6 sm:mb-8">
+              <Mail className="text-teal-500" size={20} />
+              <h3 className="text-xl sm:text-2xl font-bold text-white">COMMUNICATION PROTOCOLS</h3>
+            </div>
+            
+            {/* Contact Methods Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {contactChannels.map((channel, index) => {
+                const IconComponent = channel.icon;
+                const isActive = activeChannel === index;
+                
+                return (
+                  <div 
+                    key={channel.id} 
+                    className={`p-4 sm:p-6 border transition-all duration-300 ${
+                      isActive 
+                        ? 'border-teal-500 bg-teal-500/10 scale-105' 
+                        : 'border-gray-600 bg-black/50'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                      <div className={`p-2 rounded border ${
+                        isActive ? 'border-teal-500 bg-teal-500/10' : 'border-gray-600 bg-black/50'
+                      }`}>
+                        <IconComponent 
+                          size={16} 
+                          className={isActive ? 'text-teal-500' : 'text-gray-400'} 
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className={`font-mono font-bold text-sm sm:text-base ${
+                          isActive ? 'text-teal-500' : 'text-white'
+                        }`}>
+                          <span className="hidden sm:inline">{channel.title}</span>
+                          <span className="sm:hidden">{channel.shortTitle}</span>
+                        </h4>
+                        <div className={`px-2 py-1 text-xs font-mono rounded mt-1 inline-block ${
+                          channel.security === 'CLASSIFIED' ? 'bg-red-500/20 text-red-400' :
+                          channel.security === 'ELEVATED' ? 'bg-yellow-500/20 text-yellow-400' :
+                          'bg-green-500/20 text-green-400'
+                        }`}>
+                          {channel.security}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <div className="p-3 border border-gray-700 bg-black/30">
+                        <p className="text-teal-500 font-mono text-sm sm:text-lg break-all">
+                          {channel.email}
+                        </p>
+                      </div>
+                      <p className="text-gray-400 text-xs sm:text-sm">
+                        {channel.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Response Times */}
+          <div className="p-4 sm:p-6 border border-teal-500/30 bg-teal-500/5">
+            <h4 className="text-teal-500 font-mono text-base sm:text-lg mb-4 sm:mb-6">RESPONSE PROTOCOLS</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+              <div className="text-center p-4 border border-gray-600 bg-black/30">
+                <div className="text-xl sm:text-2xl font-bold text-white mb-2">&lt; 4 HRS</div>
+                <div className="text-gray-400 font-mono text-xs sm:text-sm">General Inquiries</div>
+              </div>
+              <div className="text-center p-4 border border-gray-600 bg-black/30">
+                <div className="text-xl sm:text-2xl font-bold text-white mb-2">&lt; 2 HRS</div>
+                <div className="text-gray-400 font-mono text-xs sm:text-sm">Technical Support</div>
+              </div>
+              <div className="text-center p-4 border border-gray-600 bg-black/30">
+                <div className="text-xl sm:text-2xl font-bold text-white mb-2">&lt; 1 HR</div>
+                <div className="text-gray-400 font-mono text-xs sm:text-sm">Emergency Response</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Communication Guidelines & Secure Channels */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+            
+            {/* Guidelines */}
+            <div className="p-4 sm:p-6 border border-gray-600 bg-black/50">
+              <h4 className="text-white font-mono text-base sm:text-lg mb-4 sm:mb-6">COMMUNICATION GUIDELINES</h4>
+              <div className="space-y-3 sm:space-y-4 text-gray-300">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-sm sm:text-base">Include organization name and point of contact in all communications</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-sm sm:text-base">Specify technical requirements and operational parameters when applicable</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-sm sm:text-base">Request secure communication channels for classified discussions</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-sm sm:text-base">Allow 24-48 hours for comprehensive technical assessments</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Secure Channels */}
+            <div className="p-4 sm:p-6 border border-red-500/30 bg-red-500/5">
+              <h4 className="text-red-400 font-mono text-base sm:text-lg mb-4 sm:mb-6 flex items-center gap-2">
+                <Shield className="text-red-500" size={16} />
+                <span className="hidden sm:inline">CLASSIFIED CHANNELS</span>
+                <span className="sm:hidden">CLASSIFIED</span>
+              </h4>
+              <div className="space-y-3 sm:space-y-4">
+                {secureChannels.map((channel) => (
+                  <div key={channel.name} className="p-3 border border-red-500/20 bg-black/30">
+                    <div className="flex justify-between items-start mb-2">
+                      <span className="text-red-400 font-mono text-xs sm:text-sm font-bold">
+                        <span className="hidden sm:inline">{channel.name}</span>
+                        <span className="sm:hidden">{channel.shortName}</span>
+                      </span>
+                      <span className={`font-mono text-xs px-2 py-1 rounded ${
+                        channel.status === 'ACTIVE' ? 'bg-green-500/20 text-green-400' :
+                        channel.status === 'STANDBY' ? 'bg-yellow-500/20 text-yellow-400' :
+                        'bg-red-500/20 text-red-400'
+                      }`}>
+                        {channel.status}
+                      </span>
+                    </div>
+                    <p className="text-gray-400 text-xs">{channel.access}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-red-400 font-mono text-xs mt-4">
+                📡 Encrypted frequency & access keys provided upon request to authorized partners only.
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Section - HQ and Signal Status */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             
             {/* HQ Location */}
             <div className="p-4 sm:p-6 border border-gray-600" style={{ backgroundColor: '#1b4242' }}>
@@ -167,183 +310,6 @@ const GammaContactSection = () => {
                   />
                 </div>
               </div>
-            </div>
-
-            {/* Communication Channels */}
-            <div className="p-4 sm:p-6 border border-gray-600 bg-black/50">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
-                <Radio className="text-teal-500" size={18} />
-                CONTACT CHANNELS
-              </h3>
-              
-              <div className="space-y-3 sm:space-y-4">
-                {contactChannels.map((channel, index) => (
-                  <div 
-                    key={channel.id}
-                    className={`p-3 sm:p-4 border transition-all duration-300 cursor-pointer ${
-                      activeChannel === index 
-                        ? 'border-teal-500 bg-teal-500/10' 
-                        : 'border-gray-600 hover:border-gray-500'
-                    }`}
-                    onClick={() => setActiveChannel(index)}
-                  >
-                    <div className="flex items-center gap-3 mb-2">
-                      <channel.icon size={16} style={{ color: channel.color }} />
-                      <span className="text-white font-mono font-bold text-xs sm:text-sm">
-                        <span className="hidden sm:inline">{channel.title}</span>
-                        <span className="sm:hidden">{channel.shortTitle}</span>
-                      </span>
-                    </div>
-                    <p className="text-teal-500 font-mono text-xs sm:text-sm mb-1">{channel.email}</p>
-                    <p className="text-gray-400 text-xs hidden sm:block">{channel.description}</p>
-                    <div className="mt-2 flex items-center gap-2">
-                      <Shield size={10} className="text-yellow-400" />
-                      <span className="text-yellow-400 text-xs font-mono">{channel.security}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Panel - Contact Information Display */}
-          <div className="lg:col-span-2 order-1 lg:order-2">
-            <div className="p-6 sm:p-8 border border-gray-600 bg-black/30 backdrop-blur-sm">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <Mail className="text-teal-500" size={20} />
-                <h3 className="text-xl sm:text-2xl font-bold text-white">COMMUNICATION PROTOCOLS</h3>
-              </div>
-              
-              {/* Contact Methods Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
-                <div className="space-y-4 sm:space-y-6">
-                  <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
-                    <Mail className="text-teal-500" size={16} />
-                    PRIMARY CHANNELS
-                  </h4>
-                  
-                  <div className="space-y-3 sm:space-y-4">
-                    <div className="p-3 sm:p-4 border border-gray-600 bg-black/50">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                        <span className="text-white font-mono font-bold text-xs sm:text-sm">GENERAL INQUIRIES</span>
-                      </div>
-                      <p className="text-teal-500 font-mono text-sm sm:text-lg">Info@GammaDefence.com</p>
-                      <p className="text-gray-400 text-xs sm:text-sm mt-1 hidden sm:block">General information and basic inquiries</p>
-                    </div>
-                    
-                    <div className="p-3 sm:p-4 border border-gray-600 bg-black/50">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <span className="text-white font-mono font-bold text-xs sm:text-sm">SALES & PARTNERSHIPS</span>
-                      </div>
-                      <p className="text-teal-500 font-mono text-sm sm:text-lg">Sales@GammaDefence.com</p>
-                      <p className="text-gray-400 text-xs sm:text-sm mt-1 hidden sm:block">Business partnerships and procurement requests</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-4 sm:space-y-6">
-                  <h4 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
-                    <MessageSquare className="text-teal-500" size={16} />
-                    SPECIALIZED CHANNELS
-                  </h4>
-                  
-                  <div className="space-y-3 sm:space-y-4">
-                    <div className="p-3 sm:p-4 border border-gray-600 bg-black/50">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                        <span className="text-white font-mono font-bold text-xs sm:text-sm">MEDIA & PRESS</span>
-                      </div>
-                      <p className="text-teal-500 font-mono text-sm sm:text-lg">Media@GammaDefence.com</p>
-                      <p className="text-gray-400 text-xs sm:text-sm mt-1 hidden sm:block">Press releases and media communications</p>
-                    </div>
-                    
-                    <div className="p-3 sm:p-4 border border-gray-600 bg-black/50">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-                        <span className="text-white font-mono font-bold text-xs sm:text-sm">TECHNICAL SUPPORT</span>
-                      </div>
-                      <p className="text-teal-500 font-mono text-sm sm:text-lg">Support@GammaDefence.com</p>
-                      <p className="text-gray-400 text-xs sm:text-sm mt-1 hidden sm:block">Technical assistance and system support</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Response Times */}
-              <div className="p-4 sm:p-6 border border-teal-500/30 bg-teal-500/5 mb-6 sm:mb-8">
-                <h4 className="text-teal-500 font-mono text-base sm:text-lg mb-3 sm:mb-4">RESPONSE PROTOCOLS</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-                  <div className="text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-white mb-1">&lt; 4 HRS</div>
-                    <div className="text-gray-400 font-mono text-xs sm:text-sm">General Inquiries</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-white mb-1">&lt; 2 HRS</div>
-                    <div className="text-gray-400 font-mono text-xs sm:text-sm">Technical Support</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-white mb-1">&lt; 1 HR</div>
-                    <div className="text-gray-400 font-mono text-xs sm:text-sm">Emergency Response</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Contact Instructions */}
-              <div className="p-4 sm:p-6 border border-gray-600 bg-black/50">
-                <h4 className="text-white font-mono text-base sm:text-lg mb-3 sm:mb-4">COMMUNICATION GUIDELINES</h4>
-                <div className="space-y-2 sm:space-y-3 text-gray-300">
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-sm sm:text-base">Include organization name and point of contact in all communications</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-sm sm:text-base">Specify technical requirements and operational parameters when applicable</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-sm sm:text-base">Request secure communication channels for classified discussions</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-sm sm:text-base">Allow 24-48 hours for comprehensive technical assessments</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Secure Channels Panel */}
-            <div className="mt-6 sm:mt-8 p-4 sm:p-6 border border-red-500/30 bg-red-500/5">
-              <h4 className="text-red-400 font-mono text-base sm:text-lg mb-3 sm:mb-4 flex items-center gap-2">
-                <Shield className="text-red-500" size={16} />
-                <span className="hidden sm:inline">CLASSIFIED COMMUNICATION CHANNELS</span>
-                <span className="sm:hidden">CLASSIFIED CHANNELS</span>
-              </h4>
-              <div className="space-y-2 sm:space-y-3">
-                {secureChannels.map((channel) => (
-                  <div key={channel.name} className="flex flex-col sm:flex-row sm:justify-between sm:items-center p-3 border border-red-500/20 bg-black/30 gap-2">
-                    <div className="flex-1">
-                      <span className="text-red-400 font-mono text-xs sm:text-sm font-bold">
-                        <span className="hidden sm:inline">{channel.name}</span>
-                        <span className="sm:hidden">{channel.shortName}</span>
-                      </span>
-                      <p className="text-gray-400 text-xs">{channel.access}</p>
-                    </div>
-                    <span className={`font-mono text-xs px-2 py-1 rounded self-start sm:self-center ${
-                      channel.status === 'ACTIVE' ? 'bg-green-500/20 text-green-400' :
-                      channel.status === 'STANDBY' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-red-500/20 text-red-400'
-                    }`}>
-                      {channel.status}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-red-400 font-mono text-xs mt-3 sm:mt-4">
-                📡 Encrypted frequency & access keys provided upon request to authorized partners only.
-              </p>
             </div>
           </div>
         </div>

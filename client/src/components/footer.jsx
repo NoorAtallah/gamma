@@ -10,7 +10,7 @@ const GammaFooter = () => {
     { name: 'Home', href: '#home', icon: Shield },
     { name: 'About Us', href: '#about', icon: Eye },
     { name: 'Products', href: '#products', icon: Target },
-    { name: 'Services', href: '#services', icon: Zap },
+
     { name: 'Contact', href: '#contact', icon: Radio }
   ];
 
@@ -130,9 +130,9 @@ const GammaFooter = () => {
                   <div className="ml-auto">
                     <span className={`text-xs font-mono px-2 py-1 rounded ${
                       index < 3 ? 'bg-green-500/20 text-green-400' : 
-                      'bg-yellow-500/20 text-yellow-400'
+                      'bg-green-500/20 text-green-400'
                     }`}>
-                      {index < 3 ? 'ACTIVE' : 'DEV'}
+                      {index < 3 ? 'DEV' : 'DEV'}
                     </span>
                   </div>
                 </div>
@@ -220,7 +220,17 @@ const GammaFooter = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-6">
               <p className="text-gray-400 font-mono text-sm">
-                © 2025 GAMMA DEFENCE SYSTEMS. All rights reserved.
+                © 2025 GAMMA DEFENCE SYSTEMS. Powered and secured by {" "}
+            <a 
+              href="https://www.codelakeenterprise.com/" 
+              className="text-blue-500 hover:underline"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Code Lake Enterprise 
+            </a>
+            {" "}
+            Technology Department.
               </p>
               <div className="flex items-center gap-2">
                 <Shield size={16} className="text-teal-500" />

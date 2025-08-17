@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Shield, Menu, X } from 'lucide-react';
-
+import img from '../assets/1.png'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,7 +38,7 @@ const Navbar = () => {
             <Link to="/" className="flex items-center gap-2 sm:gap-3">
               {/* Logo Image */}
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-teal-500/20 rounded-full border-2 border-teal-500 flex items-center justify-center">
-                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-teal-500" />
+               <img src={img} alt="" />
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-white text-lg sm:text-xl font-bold font-mono">GAMMA DEFENCE SYSTEMS</h1>

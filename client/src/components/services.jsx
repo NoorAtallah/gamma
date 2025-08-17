@@ -141,7 +141,7 @@ const GammaServicesSection = () => {
           </div>
           
           <h2 className="text-6xl font-black text-white mb-6">
-            OUR <span className="text-teal-500">SERVICES</span>
+            OUR <span className="text-teal-500">PRODUCTS</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
             Comprehensive defense solutions integrating cutting-edge technology and artificial intelligence 

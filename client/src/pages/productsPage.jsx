@@ -104,34 +104,34 @@ const ProductsPage = () => {
           </p>
         </div>
 
-        {/* Category Navigation */}
+        {/* Category Navigation - Now displays 4 categories in 2x2 grid on mobile, 1x4 on larger screens */}
         <div className="mb-8 sm:mb-12">
           <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 font-mono">PRODUCT CATEGORIES</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {productsData.categories.map((category) => {
               const IconComponent = iconMap[category.icon];
               return (
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`p-3 sm:p-4 border transition-all duration-300 ${
+                  className={`p-4 sm:p-6 border transition-all duration-300 ${
                     selectedCategory === category.id
                       ? 'border-teal-500 bg-teal-500/10 scale-105'
                       : 'border-gray-600 hover:border-gray-500 bg-black/30'
                   }`}
                 >
-                  <div className="flex flex-col items-center gap-2 sm:gap-3">
+                  <div className="flex flex-col items-center gap-3 sm:gap-4">
                     <IconComponent 
-                      size={24} 
-                      className={`sm:w-8 sm:h-8 ${selectedCategory === category.id ? 'text-teal-500' : 'text-gray-400'}`} 
+                      size={32} 
+                      className={`sm:w-10 sm:h-10 lg:w-12 lg:h-12 ${selectedCategory === category.id ? 'text-teal-500' : 'text-gray-400'}`} 
                     />
                     <div className="text-center">
-                      <h3 className={`font-mono font-bold text-xs sm:text-sm ${
+                      <h3 className={`font-mono font-bold text-sm sm:text-base lg:text-lg ${
                         selectedCategory === category.id ? 'text-teal-500' : 'text-white'
                       }`}>
                         {category.name}
                       </h3>
-                      <p className="text-gray-400 text-xs mt-1 hidden sm:block">{category.description}</p>
+                      <p className="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2 leading-tight">{category.description}</p>
                     </div>
                   </div>
                 </button>
@@ -173,7 +173,7 @@ const ProductsPage = () => {
                 <img 
                   src={product.image} 
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 
@@ -385,13 +385,7 @@ const ProductsPage = () => {
             >
               DISCUSS REQUIREMENTS
             </Link>
-            <Link 
-              to="/about"
-              className="px-6 sm:px-8 py-3 border border-gray-600 text-gray-400 font-mono hover:border-gray-500 hover:text-gray-300 transition-all duration-300 text-sm sm:text-base inline-flex items-center justify-center"
-            >
-              <span className="hidden sm:inline">About Us</span>
-              <span className="sm:hidden">About Us</span>
-            </Link>
+
           </div>
         </div>
       </div>

@@ -158,7 +158,7 @@ const AboutUsPage = () => {
               
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div className="p-4 border border-gray-600/50">
-                  <div className="text-2xl font-bold text-teal-500 mb-1">2023</div>
+                  <div className="text-2xl font-bold text-teal-500 mb-1">2025</div>
                   <div className="text-gray-400 font-mono text-sm">FOUNDED</div>
                 </div>
                 <div className="p-4 border border-gray-600/50">
@@ -269,7 +269,7 @@ const AboutUsPage = () => {
               <div className="space-y-4">
                 <div className="flex justify-between">
                   <span className="text-gray-400">Founded</span>
-                  <span className="text-teal-500 font-mono">2023</span>
+                  <span className="text-teal-500 font-mono">2025</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-400">Focus</span>

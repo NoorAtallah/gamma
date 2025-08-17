@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Eye, Target, Shield, ChevronRight, Activity, Lock, Zap, Satellite } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+// Import images from your data file
+import img from '../assets/12.png' // SkyEye-X1
+import img10 from '../assets/3.png' // Stratos
+import img4 from '../assets/9.png' // Sentinel-4X
+import img6 from '../assets/7.png' // AegisNet
+
 const GammaProductsSection = () => {
   const [activeProduct, setActiveProduct] = useState(0);
   const [pulseAnimation, setPulseAnimation] = useState(0);
@@ -12,63 +19,88 @@ const GammaProductsSection = () => {
       name: "SkyEye-X1",
       type: "TACTICAL RECONNAISSANCE",
       description: "Long-range surveillance platform with AI-powered analytics for tactical operations",
-      image: Eye,
+      image: img,
+      imageIcon: Eye,
       specs: {
-        range: "50+ KM",
-        endurance: "8+ HOURS", 
-        payload: "4.5 KG",
-        altitude: "8000 M"
+        range: "50 KM",
+        endurance: "8 HOURS", 
+        payload: "5 KG",
+        altitude: "6000 M"
       },
       capabilities: [
-        "Day/Night Vision Systems",
-        "AI Video Analytics", 
-        "Real-time Communications",
-        "Encrypted Data Transmission"
+        "Advanced AI-powered video analytics",
+        "Real-time target identification", 
+        "Encrypted communication systems",
+        "Weather-resistant design"
       ],
       status: "OPERATIONAL",
       color: "#14b8a6"
     },
     {
       id: "GDS-002", 
-      name: "Falcon-R",
-      type: "RAPID DEPLOYMENT",
-      description: "Compact tactical drone optimized for intelligence operations in hostile environments",
-      image: Target,
+      name: "Stratos",
+      type: "HIGH-ALTITUDE LONG-ENDURANCE",
+      description: "Stratospheric UAV for persistent border surveillance and global communication coverage",
+      image: img10,
+      imageIcon: Target,
       specs: {
-        range: "15 KM",
-        endurance: "45 MIN",
-        payload: "1.2 KG", 
-        altitude: "3000 M"
+        altitude: "20,000 M",
+        endurance: "30+ DAYS",
+        range: "GLOBAL", 
+        payload: "500 KG"
       },
       capabilities: [
-        "Stealth Operations Mode",
-        "Urban Warfare Ready",
-        "Quick Deployment System",
-        "Advanced Threat Detection"
+        "Stratospheric operation altitude",
+        "Month-long endurance flights",
+        "Global surveillance capability",
+        "Solar-powered sustainability"
       ],
-      status: "ACTIVE",
+      status: "DEVELOPMENT",
       color: "#06d6a0"
     },
     {
       id: "GDS-003",
-      name: "Orion-HS", 
-      type: "HEAVY LIFT TRANSPORT",
-      description: "Heavy-duty aerial platform for equipment transport and logistical support missions",
-      image: Shield,
+      name: "Sentinel-4X", 
+      type: "AUTONOMOUS RECONNAISSANCE",
+      description: "Fully autonomous ground vehicle for reconnaissance and equipment transport with advanced sensors",
+      image: img4,
+      imageIcon: Shield,
       specs: {
-        range: "100 KM",
-        endurance: "6 HOURS",
-        payload: "25 KG",
-        altitude: "5000 M" 
+        speed: "45 KM/H",
+        range: "120 KM",
+        payload: "150 KG",
+        battery: "12 HOURS" 
       },
       capabilities: [
-        "Heavy Payload Capacity",
-        "GPS Precision Landing",
-        "Autonomous Navigation",
-        "All-Weather Operations"
+        "360-degree situational awareness",
+        "Silent electric operation",
+        "Advanced obstacle avoidance",
+        "Modular sensor platform"
       ],
-      status: "STANDBY",
+      status: "ACTIVE",
       color: "#4ade80"
+    },
+    {
+      id: "GDS-004",
+      name: "AegisNet", 
+      type: "AI COMMAND & CONTROL",
+      description: "Centralized AI command system integrating multi-platform data for rapid decision-making",
+      image: img6,
+      imageIcon: Eye,
+      specs: {
+        processing: "QUANTUM AI",
+        response: "< 100MS",
+        users: "500+",
+        security: "MILITARY-GRADE" 
+      },
+      capabilities: [
+        "Real-time threat assessment",
+        "Multi-platform integration",
+        "Predictive analytics",
+        "Quantum-secured communications"
+      ],
+      status: "ACTIVE",
+      color: "#8b5cf6"
     }
   ];
 
@@ -126,7 +158,7 @@ const GammaProductsSection = () => {
             TACTICAL <span style={{ color: '#14b8a6' }}>ARSENAL</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto px-4 sm:px-0">
-            Advanced unmanned aerial systems engineered for modern warfare and defense operations
+            Advanced defense systems engineered for modern warfare and tactical operations
           </p>
         </div>
 
@@ -156,94 +188,31 @@ const GammaProductsSection = () => {
         {/* Main Product Display */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           
-          {/* Left: Product Visualization */}
-          <div className="relative order-2 lg:order-1">
-            
-            {/* Main Product Card */}
-            <div 
-              className="relative p-6 sm:p-8 border-2 border-gray-600 backdrop-blur-sm mx-4 sm:mx-0"
-              style={{ 
-                backgroundColor: '#1b4242',
-                clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))'
-              }}
-            >
+          {/* Left: Product Image Only */}
+          <div className="relative order-2 lg:order-1 flex justify-center items-center">
+            <div className="relative">
+              {/* Pulsing Background */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  width: '400px',
+                  height: '300px',
+                  transform: `scale(${1 + Math.sin(pulseAnimation * 0.1) * 0.05})`,
+                  background: `radial-gradient(ellipse, ${currentProduct.color}15 0%, transparent 70%)`
+                }}
+              />
               
-              {/* Product Header */}
-              <div className="text-center mb-6 sm:mb-8">
-                <div className="text-gray-400 font-mono text-xs sm:text-sm mb-2">{currentProduct.id}</div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">{currentProduct.name}</h3>
-                <div className="text-teal-400 font-mono text-sm sm:text-lg tracking-wider">{currentProduct.type}</div>
-              </div>
-
-              {/* Central Icon with Animation */}
-              <div className="relative flex justify-center mb-6 sm:mb-8">
-                <div className="relative">
-                  
-                  {/* Pulsing Background */}
-                  <div 
-                    className="absolute inset-0 rounded-full border-2 border-teal-400/30"
-                    style={{
-                      width: '150px',
-                      height: '150px',
-                      transform: `scale(${1 + Math.sin(pulseAnimation * 0.1) * 0.1})`,
-                      background: `radial-gradient(circle, ${currentProduct.color}20 0%, transparent 70%)`
-                    }}
-                  />
-                  
-                  {/* Inner Ring - Hidden on very small screens */}
-                  <div className="absolute inset-3 rounded-full border border-gray-500 hidden sm:block" />
-                  
-                  {/* Product Icon */}
-                  <div className="relative w-32 h-32 sm:w-36 sm:h-36 lg:w-48 lg:h-48 rounded-full border-2 border-teal-400 flex items-center justify-center" style={{ backgroundColor: '#000000' }}>
-                    <currentProduct.image size={48} className="sm:hidden" style={{ color: currentProduct.color }} />
-                    <currentProduct.image size={60} className="hidden sm:block lg:hidden" style={{ color: currentProduct.color }} />
-                    <currentProduct.image size={80} className="hidden lg:block" style={{ color: currentProduct.color }} />
-                  </div>
-                  
-                  {/* Rotating Elements - Hidden on mobile */}
-                  <div className="hidden sm:block">
-                    {[...Array(8)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute w-1 sm:w-2 h-4 sm:h-6 lg:h-8 bg-teal-400"
-                        style={{
-                          top: '50%',
-                          left: '50%',
-                          transform: `rotate(${i * 45 + dataFlow * 2}deg) translateY(-80px)`,
-                          transformOrigin: '1px 80px',
-                          opacity: 0.6
-                        }}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Status Indicator */}
-              <div className="text-center">
-                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 border border-green-500 bg-green-500/10">
-                  <Activity size={14} className="sm:hidden text-green-400" />
-                  <Activity size={16} className="hidden sm:block text-green-400" />
-                  <span className="text-green-400 font-mono text-xs sm:text-sm">{currentProduct.status}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Spec Cards */}
-            <div 
-              className="absolute -top-4 sm:-top-6 -right-2 sm:-right-6 p-3 sm:p-4 border border-gray-600 backdrop-blur-sm"
-              style={{ backgroundColor: '#1b4242' }}
-            >
-              <div className="text-teal-400 font-mono text-xs">MAX RANGE</div>
-              <div className="text-white font-bold text-sm sm:text-lg">{currentProduct.specs.range}</div>
-            </div>
-            
-            <div 
-              className="absolute -bottom-4 sm:-bottom-6 -left-2 sm:-left-6 p-3 sm:p-4 border border-gray-600 backdrop-blur-sm"
-              style={{ backgroundColor: '#1b4242' }}
-            >
-              <div className="text-teal-400 font-mono text-xs">ENDURANCE</div>
-              <div className="text-white font-bold text-sm sm:text-lg">{currentProduct.specs.endurance}</div>
+              {/* Product Image - Direct Display */}
+              <img 
+                src={currentProduct.image} 
+                alt={currentProduct.name}
+                className="w-80 h-60 sm:w-96 sm:h-72 lg:w-[400px] lg:h-80 object-contain relative z-10"
+                style={{ 
+                  filter: `drop-shadow(0 0 20px ${currentProduct.color}80) drop-shadow(0 0 40px ${currentProduct.color}40)`
+                }}
+              />
+              
+    
             </div>
           </div>
 
@@ -284,30 +253,28 @@ const GammaProductsSection = () => {
             </div>
 
             {/* Action Buttons */}
-         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
-  <Link 
-    to="/contact"
-    className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 text-black font-bold transition-all duration-300 hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
-    style={{ 
-      backgroundColor: '#14b8a6',
-      clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 100%, 15px 100%)'
-    }}
-  >
-    REQUEST BRIEFING
-    <ChevronRight size={16} className="sm:hidden" />
-    <ChevronRight size={20} className="hidden sm:block" />
-  </Link>
-  
-  <Link 
-    to="/products"
-    className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-600 text-white font-bold hover:border-teal-400 hover:text-teal-400 transition-all duration-300 text-sm sm:text-base"
-  >
-    <Zap size={16} className="sm:hidden" />
-    <Zap size={20} className="hidden sm:block" />
-    <span className="hidden sm:inline">TECHNICAL SPECS</span>
-    <span className="sm:hidden">SPECS</span>
-  </Link>
-</div>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
+              <button 
+                className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 text-black font-bold transition-all duration-300 hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
+                style={{ 
+                  backgroundColor: '#14b8a6',
+                  clipPath: 'polygon(0 0, calc(100% - 15px) 0, 100% 100%, 15px 100%)'
+                }}
+              >
+                REQUEST BRIEFING
+                <ChevronRight size={16} className="sm:hidden" />
+                <ChevronRight size={20} className="hidden sm:block" />
+              </button>
+              
+              <button 
+                className="flex items-center justify-center gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-600 text-white font-bold hover:border-teal-400 hover:text-teal-400 transition-all duration-300 text-sm sm:text-base"
+              >
+                <Zap size={16} className="sm:hidden" />
+                <Zap size={20} className="hidden sm:block" />
+                <span className="hidden sm:inline">TECHNICAL SPECS</span>
+                <span className="sm:hidden">SPECS</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

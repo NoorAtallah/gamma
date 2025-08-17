@@ -348,15 +348,7 @@ const ContactUsPage = () => {
             </div>
 
             {/* Contact Form CTA */}
-            <div className="p-6 border border-teal-500/30 bg-teal-500/5">
-              <h4 className="text-teal-500 font-mono text-lg mb-4">SECURE CONTACT FORM</h4>
-              <p className="text-gray-300 text-sm mb-4">
-                For sensitive inquiries, use our encrypted contact form with end-to-end security.
-              </p>
-              <button className="w-full p-3 border border-teal-500 text-teal-500 font-mono font-bold hover:bg-teal-500 hover:text-black transition-all duration-300">
-                ACCESS SECURE FORM
-              </button>
-            </div>
+
           </div>
         </div>
       </div>
