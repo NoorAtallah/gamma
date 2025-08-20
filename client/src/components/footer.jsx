@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Shield, Mail, MapPin, Radio, Globe, Lock, Zap, Eye, Target, Satellite, Users, MessageSquare } from 'lucide-react';
+import img from '../assets/1.png';
 
 const GammaFooter = () => {
   const [systemTime, setSystemTime] = useState(new Date());
@@ -7,11 +9,10 @@ const GammaFooter = () => {
   const [encryptionLevel, setEncryptionLevel] = useState(100);
 
   const quickLinks = [
-    { name: 'Home', href: '#home', icon: Shield },
-    { name: 'About Us', href: '#about', icon: Eye },
-    { name: 'Products', href: '#products', icon: Target },
-
-    { name: 'Contact', href: '#contact', icon: Radio }
+    { name: 'Home', href: '/', icon: Shield },
+    { name: 'About Us', href: '/about', icon: Eye },
+    { name: 'Products', href: '/products', icon: Target },
+    { name: 'Contact', href: '/contact', icon: Radio }
   ];
 
   const products = [
@@ -64,7 +65,9 @@ const GammaFooter = () => {
           <div className="lg:col-span-1">
             <div className="p-6 border border-gray-600" style={{ backgroundColor: '#1b4242' }}>
               <div className="flex items-center gap-3 mb-6">
-                <Shield className="text-teal-500" size={32} />
+                <div className="w-8 h-8 flex items-center justify-center">
+                  <img src={img} alt="Gamma Defence Systems" className="w-full h-full object-contain" />
+                </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">GAMMA</h3>
                   <p className="text-teal-500 font-mono text-sm">DEFENCE SYSTEMS</p>
@@ -101,14 +104,14 @@ const GammaFooter = () => {
             </h4>
             <div className="space-y-3">
               {quickLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="flex items-center gap-3 p-3 border border-gray-600 bg-black/30 hover:bg-black/50 hover:border-teal-500 transition-all duration-300 group"
                 >
                   <link.icon size={16} className="text-gray-400 group-hover:text-teal-500 transition-colors" />
                   <span className="text-gray-300 font-mono text-sm group-hover:text-white transition-colors">{link.name}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
